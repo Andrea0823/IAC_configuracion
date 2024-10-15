@@ -1,0 +1,20 @@
+# Exported from Render on 2024-10-11T21:47:27Z
+services:
+- type: web
+  name: aplicacion_web
+  runtime: python
+  repo: https://github.com/Andrea0823/aplicacion_web.git
+  plan: free
+  region: oregon
+  buildCommand: pip install -r requirements.txt
+  startCommand: python web/app.py
+
+- type: web
+  name: api_rest
+  runtime: python
+  repo: https://github.com/Andrea0823/api_rest.git
+  plan: free
+  region: oregon
+  buildCommand: pip install -r requirements.txt
+  startCommand: fastapi dev app/main.py
+version: "1"
